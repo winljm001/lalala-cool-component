@@ -6,13 +6,12 @@ import { Component, Host, h } from '@stencil/core';
   shadow: true,
 })
 export class ThreeModal {
-
   render() {
     return (
       <Host>
+        <div> three-modal</div>
         <slot></slot>
       </Host>
     );
   }
-
 }

@@ -1,5 +1,5 @@
 const meta = {
-  title: 'Components/MyComponent',
+  title: 'Components/my-component',
 };
 
 export default meta;

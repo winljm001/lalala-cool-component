@@ -1,5 +1,5 @@
-:host {
-  display: block;
-
-  s
+h1{
+  --text:red;
+  color: var(--text);
 }
+
