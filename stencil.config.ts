@@ -9,13 +9,13 @@ export const config: Config = {
     },
     {
       type: 'dist-custom-elements',
+      customElementsExportBehavior: 'auto-define-custom-elements',
     },
     {
-      type: 'docs-readme',
-    },
-    {
-      type: 'www',
-      serviceWorker: null, // disable service workers
+      type: 'docs-custom',
+      generator: () => {
+        return;
+      },
     },
   ],
 };

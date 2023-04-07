@@ -20,6 +20,8 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface ThreeModal {
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -28,8 +30,15 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLThreeModalElement extends Components.ThreeModal, HTMLStencilElement {
+    }
+    var HTMLThreeModalElement: {
+        prototype: HTMLThreeModalElement;
+        new (): HTMLThreeModalElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "three-modal": HTMLThreeModalElement;
     }
 }
 declare namespace LocalJSX {
@@ -47,8 +56,11 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface ThreeModal {
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "three-modal": ThreeModal;
     }
 }
 export { LocalJSX as JSX };
@@ -56,6 +68,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "three-modal": LocalJSX.ThreeModal & JSXBase.HTMLAttributes<HTMLThreeModalElement>;
         }
     }
 }
