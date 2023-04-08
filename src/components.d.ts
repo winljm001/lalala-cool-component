@@ -12,11 +12,11 @@ export namespace Components {
          */
         "color": string;
         /**
-          * 圆圈的颜色
+          * 显示child的时候的大小
          */
         "maxSize": string;
         /**
-          * 圆圈的颜色
+          * 平时的大小
          */
         "minSize": string;
         /**
@@ -73,11 +73,11 @@ declare namespace LocalJSX {
          */
         "color"?: string;
         /**
-          * 圆圈的颜色
+          * 显示child的时候的大小
          */
         "maxSize"?: string;
         /**
-          * 圆圈的颜色
+          * 平时的大小
          */
         "minSize"?: string;
     }

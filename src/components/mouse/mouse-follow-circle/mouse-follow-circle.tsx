@@ -14,11 +14,11 @@ export class MouseFollowCircle {
    */
   @Prop() color: string = '#3df1db';
   /**
-   *  圆圈的颜色
+   * 显示child的时候的大小
    */
   @Prop() maxSize: string = '64px';
   /**
-   *  圆圈的颜色
+   * 平时的大小
    */
   @Prop() minSize: string = '24px';
   /**
