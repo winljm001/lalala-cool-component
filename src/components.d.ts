@@ -6,6 +6,24 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface MouseFollowCircle {
+        /**
+          * 圆圈的颜色
+         */
+        "color": string;
+        /**
+          * 圆圈的颜色
+         */
+        "maxSize": string;
+        /**
+          * 圆圈的颜色
+         */
+        "minSize": string;
+        /**
+          * 圆圈是否显示内容
+         */
+        "setIsShowChild": (isShow?: boolean) => Promise<boolean>;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -24,6 +42,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLMouseFollowCircleElement extends Components.MouseFollowCircle, HTMLStencilElement {
+    }
+    var HTMLMouseFollowCircleElement: {
+        prototype: HTMLMouseFollowCircleElement;
+        new (): HTMLMouseFollowCircleElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -37,11 +61,26 @@ declare global {
         new (): HTMLThreeModalElement;
     };
     interface HTMLElementTagNameMap {
+        "mouse-follow-circle": HTMLMouseFollowCircleElement;
         "my-component": HTMLMyComponentElement;
         "three-modal": HTMLThreeModalElement;
     }
 }
 declare namespace LocalJSX {
+    interface MouseFollowCircle {
+        /**
+          * 圆圈的颜色
+         */
+        "color"?: string;
+        /**
+          * 圆圈的颜色
+         */
+        "maxSize"?: string;
+        /**
+          * 圆圈的颜色
+         */
+        "minSize"?: string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -59,6 +98,7 @@ declare namespace LocalJSX {
     interface ThreeModal {
     }
     interface IntrinsicElements {
+        "mouse-follow-circle": MouseFollowCircle;
         "my-component": MyComponent;
         "three-modal": ThreeModal;
     }
@@ -67,6 +107,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "mouse-follow-circle": LocalJSX.MouseFollowCircle & JSXBase.HTMLAttributes<HTMLMouseFollowCircleElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "three-modal": LocalJSX.ThreeModal & JSXBase.HTMLAttributes<HTMLThreeModalElement>;
         }

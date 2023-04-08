@@ -1,0 +1,28 @@
+.follow-circle-wrap{
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2000;
+  pointer-events: none; 
+}
+.follow-circle{
+  transition: transform 0.064s;
+  will-change:transform;
+  transform: translate(0,0);
+
+}
+.follow-circle-body{
+  position: absolute;
+  transform: translate(-50%,-50%);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  transition: all 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.follow-circle-child{
+  transform: scale(0);
+  transition: all 0.4s;
+}

@@ -27,7 +27,8 @@
     "build-storybook": "storybook build --output-dir docs"
   },
   "dependencies": {
-    "@stencil/core": "^3.0.0"
+    "@stencil/core": "^3.0.0",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.21.4",
