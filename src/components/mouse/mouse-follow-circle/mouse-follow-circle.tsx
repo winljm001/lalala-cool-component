@@ -50,7 +50,7 @@ export class MouseFollowCircle {
       <div class="follow-circle-wrap">
         <div class="follow-circle" style={{ transform: `translate(${this.circleX}px,${this.circleY}px)` }}>
           <div class="follow-circle-body" style={{ 'background-color': this.color, '--size': this.isShowChild ? this.maxSize : this.minSize }}>
-            <div class="follow-circle-child" style={{ display: this.isShowChild ? 'block' : 'none', transform: this.isShowChild ? 'scale(1)' : 'scale(0)' }}>
+            <div class="follow-circle-child" style={{ transform: this.isShowChild ? 'scale(1)' : 'scale(0)' }}>
               <slot></slot>
             </div>
           </div>
