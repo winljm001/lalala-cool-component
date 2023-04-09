@@ -24,6 +24,16 @@ export namespace Components {
          */
         "setIsShowChild": (isShow?: boolean) => Promise<boolean>;
     }
+    interface MouseFollowCross {
+        /**
+          * 显示child的时候的大小
+         */
+        "maxSize": string;
+        /**
+          * 平时的大小
+         */
+        "minSize": string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -48,6 +58,12 @@ declare global {
         prototype: HTMLMouseFollowCircleElement;
         new (): HTMLMouseFollowCircleElement;
     };
+    interface HTMLMouseFollowCrossElement extends Components.MouseFollowCross, HTMLStencilElement {
+    }
+    var HTMLMouseFollowCrossElement: {
+        prototype: HTMLMouseFollowCrossElement;
+        new (): HTMLMouseFollowCrossElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -62,6 +78,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "mouse-follow-circle": HTMLMouseFollowCircleElement;
+        "mouse-follow-cross": HTMLMouseFollowCrossElement;
         "my-component": HTMLMyComponentElement;
         "three-modal": HTMLThreeModalElement;
     }
@@ -72,6 +89,16 @@ declare namespace LocalJSX {
           * 圆圈的颜色
          */
         "color"?: string;
+        /**
+          * 显示child的时候的大小
+         */
+        "maxSize"?: string;
+        /**
+          * 平时的大小
+         */
+        "minSize"?: string;
+    }
+    interface MouseFollowCross {
         /**
           * 显示child的时候的大小
          */
@@ -99,6 +126,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "mouse-follow-circle": MouseFollowCircle;
+        "mouse-follow-cross": MouseFollowCross;
         "my-component": MyComponent;
         "three-modal": ThreeModal;
     }
@@ -108,6 +136,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "mouse-follow-circle": LocalJSX.MouseFollowCircle & JSXBase.HTMLAttributes<HTMLMouseFollowCircleElement>;
+            "mouse-follow-cross": LocalJSX.MouseFollowCross & JSXBase.HTMLAttributes<HTMLMouseFollowCrossElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "three-modal": LocalJSX.ThreeModal & JSXBase.HTMLAttributes<HTMLThreeModalElement>;
         }
