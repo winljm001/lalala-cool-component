@@ -6,6 +6,12 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AdjunctionCyberpunk {
+        /**
+          * 显示child的时候的大小
+         */
+        "mode": 'hover' | 'auto';
+    }
     interface MouseFollowCircle {
         /**
           * 圆圈的颜色
@@ -52,6 +58,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLAdjunctionCyberpunkElement extends Components.AdjunctionCyberpunk, HTMLStencilElement {
+    }
+    var HTMLAdjunctionCyberpunkElement: {
+        prototype: HTMLAdjunctionCyberpunkElement;
+        new (): HTMLAdjunctionCyberpunkElement;
+    };
     interface HTMLMouseFollowCircleElement extends Components.MouseFollowCircle, HTMLStencilElement {
     }
     var HTMLMouseFollowCircleElement: {
@@ -77,6 +89,7 @@ declare global {
         new (): HTMLThreeModalElement;
     };
     interface HTMLElementTagNameMap {
+        "adjunction-cyberpunk": HTMLAdjunctionCyberpunkElement;
         "mouse-follow-circle": HTMLMouseFollowCircleElement;
         "mouse-follow-cross": HTMLMouseFollowCrossElement;
         "my-component": HTMLMyComponentElement;
@@ -84,6 +97,12 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface AdjunctionCyberpunk {
+        /**
+          * 显示child的时候的大小
+         */
+        "mode"?: 'hover' | 'auto';
+    }
     interface MouseFollowCircle {
         /**
           * 圆圈的颜色
@@ -125,6 +144,7 @@ declare namespace LocalJSX {
     interface ThreeModal {
     }
     interface IntrinsicElements {
+        "adjunction-cyberpunk": AdjunctionCyberpunk;
         "mouse-follow-circle": MouseFollowCircle;
         "mouse-follow-cross": MouseFollowCross;
         "my-component": MyComponent;
@@ -135,6 +155,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "adjunction-cyberpunk": LocalJSX.AdjunctionCyberpunk & JSXBase.HTMLAttributes<HTMLAdjunctionCyberpunkElement>;
             "mouse-follow-circle": LocalJSX.MouseFollowCircle & JSXBase.HTMLAttributes<HTMLMouseFollowCircleElement>;
             "mouse-follow-cross": LocalJSX.MouseFollowCross & JSXBase.HTMLAttributes<HTMLMouseFollowCrossElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;

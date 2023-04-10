@@ -1,4 +1,4 @@
-/** 鼠标跟随效果 */
+/** 鼠标跟随效果，瞄准镜十字架效果，这里是白色背景看不出来 */
 const meta = {
   title: 'mouse/mouse-follow-cross',
 };
