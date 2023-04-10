@@ -24,7 +24,8 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "storybook": "stencil build --watch & storybook dev -p 6006",
-    "build-storybook": "storybook build --output-dir docs"
+    "build-storybook": "storybook build --output-dir docs",
+    "release": "release-it patch"
   },
   "dependencies": {
     "@stencil/core": "^3.0.0",
@@ -33,6 +34,7 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.21.4",
+    "@release-it/conventional-changelog": "^5.1.1",
     "@storybook/addon-essentials": "^7.0.2",
     "@storybook/addon-interactions": "^7.0.2",
     "@storybook/addon-links": "^7.0.2",
@@ -48,7 +50,23 @@
     "puppeteer": "^19.5.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "release-it": "^15.10.1",
     "storybook": "^7.0.2"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release ${version}",
+      "tagName": "v${version}"
+    },
+    "github": {
+      "release": true
+    },
+    "npm": {
+      "publish": true
+    }
   },
   "license": "MIT"
 }
