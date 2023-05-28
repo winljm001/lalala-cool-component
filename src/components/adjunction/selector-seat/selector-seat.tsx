@@ -36,12 +36,7 @@ export class SelectorSeat {
       const { sx, sy, swidth, sheight, x, y, width, height } = getObjectFitSize('cover', this.canvasWidth, this.canvasHeight, bgImg.width, bgImg.height);
       console.log(this.canvasWidth, this.canvasHeight, bgImg.width, bgImg.height);
       console.log(bgImg, sx, sy, swidth, sheight, x, y, width, height);
-
       this.ctx.drawImage(bgImg, sx, sy, swidth, sheight, x, y, width, height);
-      // console.log(bgImg, this.ctx);
-      // this.ctx.drawImage(bgImg, sx, sy, sw, sh, 0, 0, this.canvasWidth, this.canvasHeight);
-      // this.ctx.drawImage(bgImg, 0, 0);
-      // this.ctx.drawImage(bgImg, 0, 0, this.canvasWidth, this.canvasHeight, 0, 0, bgImg.width, bgImg.height);
     };
   }
   render() {

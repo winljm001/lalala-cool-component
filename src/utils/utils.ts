@@ -11,7 +11,7 @@ export function format(first: string, middle: string, last: string): string {
  * @param {*} imgHeight  图片高度
  * @return {*} canvas drawImage的所有入参
  */
-export function getObjectFitSize(type = 'cover', containerWidth, containerHeight, imgWidth, imgHeight) {
+export function getObjectFitSize(type: 'cover' | 'contain' = 'cover', containerWidth, containerHeight, imgWidth, imgHeight) {
   let radio = 1, // 容器与图片的比例
     sx = 0, // 开始剪切的 x 坐标位置。
     sy = 0, // 开始剪切的 y 坐标位置。
