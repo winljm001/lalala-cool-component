@@ -28,7 +28,7 @@
     "release": "release-it patch"
   },
   "dependencies": {
-    "@stencil/core": "^3.0.0",
+    "@stencil/core": "^3.3.0",
     "classnames": "^2.3.2",
     "lodash": "^4.17.21"
   },

@@ -54,6 +54,11 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface SelectorSeat {
+        "backgroundImg": string;
+        "height": string;
+        "width": string;
+    }
     interface ThreeModal {
     }
 }
@@ -82,6 +87,12 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLSelectorSeatElement extends Components.SelectorSeat, HTMLStencilElement {
+    }
+    var HTMLSelectorSeatElement: {
+        prototype: HTMLSelectorSeatElement;
+        new (): HTMLSelectorSeatElement;
+    };
     interface HTMLThreeModalElement extends Components.ThreeModal, HTMLStencilElement {
     }
     var HTMLThreeModalElement: {
@@ -93,6 +104,7 @@ declare global {
         "mouse-follow-circle": HTMLMouseFollowCircleElement;
         "mouse-follow-cross": HTMLMouseFollowCrossElement;
         "my-component": HTMLMyComponentElement;
+        "selector-seat": HTMLSelectorSeatElement;
         "three-modal": HTMLThreeModalElement;
     }
 }
@@ -141,6 +153,11 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface SelectorSeat {
+        "backgroundImg"?: string;
+        "height"?: string;
+        "width"?: string;
+    }
     interface ThreeModal {
     }
     interface IntrinsicElements {
@@ -148,6 +165,7 @@ declare namespace LocalJSX {
         "mouse-follow-circle": MouseFollowCircle;
         "mouse-follow-cross": MouseFollowCross;
         "my-component": MyComponent;
+        "selector-seat": SelectorSeat;
         "three-modal": ThreeModal;
     }
 }
@@ -159,6 +177,7 @@ declare module "@stencil/core" {
             "mouse-follow-circle": LocalJSX.MouseFollowCircle & JSXBase.HTMLAttributes<HTMLMouseFollowCircleElement>;
             "mouse-follow-cross": LocalJSX.MouseFollowCross & JSXBase.HTMLAttributes<HTMLMouseFollowCrossElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "selector-seat": LocalJSX.SelectorSeat & JSXBase.HTMLAttributes<HTMLSelectorSeatElement>;
             "three-modal": LocalJSX.ThreeModal & JSXBase.HTMLAttributes<HTMLThreeModalElement>;
         }
     }
